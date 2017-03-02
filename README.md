@@ -1,12 +1,12 @@
 # WP GitHub Sync Meta #
-**Contributors:** lite3 
+**Contributors:** lite3  
 **Tags:** github, git, version control, content, collaboration, publishing, meta, tags, categories  
 **Requires at least:** 4.2  
-**Tested up to:** 4.7 
+**Tested up to:** 4.7  
 **Stable tag:** 1.1.0  
 **License:** GPLv2  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
-**Requires base plugin:** wp-github-sync 
+**Requires base plugin:** wp-github-sync  
 
 ## Description ##
 
