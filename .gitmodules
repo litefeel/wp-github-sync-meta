@@ -1,0 +1,3 @@
+[submodule "deploy2wp"]
+	path = deploy2wp
+	url = https://github.com/lite3/deploy2wp.git
