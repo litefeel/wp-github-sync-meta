@@ -1,17 +1,15 @@
 === WP GitHub Sync Meta ===
 Contributors: lite3 
 Tags: github, git, version control, content, collaboration, publishing, meta, tags, categories  
-Requires at least: 3.9  
-Tested up to: 4.5.3 
+Requires at least: 4.2  
+Tested up to: 4.7 
 Stable tag: 1.0.0  
 License: GPLv2  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
 == Description ==
 
-*Adds support for custom post meta for Wordpress GitHub Sync*
-
-Add tags and categories to guithub.
+*Adds support for custom post meta, tags, categories for Wordpress GitHub Sync*
 
 This plugin Requires [Wordpress guithub Sync][https://wordpress.org/plugins/wp-github-sync/]
 

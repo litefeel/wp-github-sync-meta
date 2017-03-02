@@ -2,8 +2,8 @@
 /**
  * Plugin Name:  WP GitHub Sync Meta
  * Plugin URI:   https://github.com/lite3/wp-github-sync-meta
- * Description:  Adds support for custom post meta
- * Version:      1.0.0
+ * Description:  Adds support for custom post meta, tags and categories
+ * Version:      1.1.0
  * Author:       lite3
  * Author URI:   https://www.litefeel.com/
  * License:      GPL2
@@ -37,19 +37,52 @@ add_filter('wpghs_post_meta', function ($meta, $wpghs_post) {
 add_filter('wpghs_pre_import_args', function ($args, $wpghs_post) {
 
     $meta = $wpghs_post->get_meta();
-    echo "meta start\n";
-    var_dump($meta);
-    echo "meta end\n";
+
+    // update tags
     if (!empty($meta['tags'])) {
         $args['tags_input'] = $meta['tags'];
     }
-    // if (!empty($meta['categories'])) {
-    //     $args['post_category'] = $meta['categories'];
-    // }
+
+    // update categories
+    if (!empty($meta['categories'])) {
+        $categories = $meta['categories'];
+        if (!is_array($categories)) {
+            $categories = array($categories);
+        }
+        $terms = get_terms(array(
+            'taxonomy' => 'category', 
+            'fields' => 'id=>name',
+            'hide_empty' => 0,
+            'name' => $categories
+            )
+        );
+        $map = array();
+        foreach ($categories as $name) {
+            $map[$name] = 1;
+        }
+
+        $ids = array();
+        if (!empty($terms)) {
+            foreach ($terms as $id => $name) {
+                $ids[] = $id;
+                unset($map[$name]);
+            }
+        }
+        
+        // create new terms
+        if (!empty($map)) {
+            foreach ($map as $name => $value) {
+                $term = wp_insert_term($name, 'category', array('parent' => 0));
+                // array('term_id' => $term_id, 'term_taxonomy_id' => $tt_id);
+                $ids[] = $term['term_id'];
+            }
+        }
+
+        $args['post_category'] = $ids;
+    }
 
     return $args;
 }, 10, 2);
-
 
 // github meta to post
 add_filter('wpghs_pre_import_meta', function ($meta, $wpghs_post) {
