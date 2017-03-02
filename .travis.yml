@@ -1,5 +1,5 @@
 language: php
 os:
 - linux
-
-script: chmod +x deploy2wp/scripts/deploy2wp.sh && deploy2wp/scripts/deploy2wp.sh
+before_script: chmod -R +x deploy2wp/scripts
+script: deploy2wp/scripts/wp2md.sh REDAME.md readme.txt to-wp && deploy2wp/scripts/deploy2wp.sh
