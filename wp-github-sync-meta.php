@@ -7,6 +7,7 @@
  * Author:       lite3
  * Author URI:   https://www.litefeel.com/
  * License:      GPL2
+ * Text Domain:  wp-github-sync-meta
  */
 
 // add tags and categories to github
