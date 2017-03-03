@@ -1,7 +1,9 @@
 language: php
 os:
   - linux
-  
+
+env: DEPLOYMASTER=1
+
 before_script:
   - git clone -b dev https://github.com/lite3/deploy2wp.git 
   - chmod -R +x deploy2wp/scripts
