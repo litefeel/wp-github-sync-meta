@@ -98,3 +98,4 @@ add_filter('wpghs_pre_import_meta', function ($meta, $wpghs_post) {
     return $meta;
 }, 10, 2);
 
+load_plugin_textdomain('wp-github-sync-meta');
