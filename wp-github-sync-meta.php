@@ -98,4 +98,10 @@ add_filter('wpghs_pre_import_meta', function ($meta, $wpghs_post) {
     return $meta;
 }, 10, 2);
 
-load_plugin_textdomain('wp-github-sync-meta');
+// modify edit post link
+add_filter('get_edit_post_link', function($link, $postID, $context) {
+    $wpghs_post = new WordPress_GitHub_Sync_Post( $postID, WordPress_GitHub_Sync::$instance->api() );
+    return $wpghs_post->github_edit_url();
+}, 10, 3);
+
+// load_plugin_textdomain('wp-github-sync-meta');
