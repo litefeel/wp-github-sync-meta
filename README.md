@@ -1,9 +1,10 @@
 # WP GitHub Sync Meta #
-**Contributors:** lite3  
+**Contributors:** litefeel  
 **Tags:** github, git, version control, content, collaboration, publishing, meta, tags, categories  
+**Donate link:** https://www.paypal.me/litefeel  
 **Requires at least:** 4.2  
-**Tested up to:** 4.7  
-**Stable tag:** 1.1.0  
+**Tested up to:** 4.7.3  
+**Stable tag:** 1.2  
 **License:** GPLv2  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Requires base plugin:** wp-github-sync  

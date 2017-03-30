@@ -3,8 +3,8 @@
  * Plugin Name:  WP GitHub Sync Meta
  * Plugin URI:   https://github.com/lite3/wp-github-sync-meta
  * Description:  Adds support for custom post meta, tags and categories
- * Version:      1.1.0
- * Author:       lite3
+ * Version:      1.2
+ * Author:       litefeel
  * Author URI:   https://www.litefeel.com/
  * License:      GPL2
  * Text Domain:  wp-github-sync-meta
